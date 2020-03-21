@@ -19,6 +19,7 @@ import {SelectButtonModule} from 'primeng/selectbutton';
 import {DropdownModule} from 'primeng/dropdown';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
+import {InputMaskModule} from 'primeng/inputmask';
 
 
 
@@ -45,7 +46,8 @@ import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.compo
     CalendarModule,
     SelectButtonModule,
     DropdownModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    InputMaskModule
   ],
   providers: [],
   bootstrap: [AppComponent]
