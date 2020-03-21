@@ -7,6 +7,11 @@ body {
   font-weight: 600;
 }
 
+a {
+  color: #337ac3;
+  text-decoration: none;
+}
+
 label {
   font-weight: bold;
 }
