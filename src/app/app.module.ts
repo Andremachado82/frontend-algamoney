@@ -20,6 +20,9 @@ import {DropdownModule} from 'primeng/dropdown';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { PessoaCadastroComponent } from './pessoa-cadastro/pessoa-cadastro.component';
 import {InputMaskModule} from 'primeng/inputmask';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -37,6 +40,8 @@ import {InputMaskModule} from 'primeng/inputmask';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
+
     AppRoutingModule,
     InputTextModule,
     ButtonModule,
@@ -47,7 +52,10 @@ import {InputMaskModule} from 'primeng/inputmask';
     SelectButtonModule,
     DropdownModule,
     NgxCurrencyModule,
-    InputMaskModule
+    InputMaskModule,
+    MessagesModule,
+    MessageModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
