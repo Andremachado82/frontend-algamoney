@@ -23,6 +23,7 @@ import {InputMaskModule} from 'primeng/inputmask';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { FormsModule } from '@angular/forms';
+import { MessageComponent } from './message/message.component';
 
 
 
@@ -36,6 +37,7 @@ import { FormsModule } from '@angular/forms';
     PessoasPesquisaComponent,
     LancamentoCadastroComponent,
     PessoaCadastroComponent,
+    MessageComponent,
   ],
   imports: [
     BrowserModule,

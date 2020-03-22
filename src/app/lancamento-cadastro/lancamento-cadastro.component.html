@@ -28,18 +28,15 @@
           #descricao="ngModel"
           required
           minlength="5"
+
         >
+        <app-message  [control]="descricao" error="required" 
+          text="Informe uma descrição">
+        </app-message>
 
-      <div class="ui-messages ui-messages-error"
-        *ngIf="descricao.hasError('required') && descricao.dirty">
-        Informe uma descrição
-      </div>
-
-      <div class="ui-messages ui-messages-error"
-          *ngIf="descricao.hasError('minlength') && descricao.dirty">
-          Mínimo de {{ descricao.errors.minlength.requiredLength }} caracteres.
-      </div>
-
+        <app-message  [control]="descricao" error="minlength" 
+          text="Mínimo de {{ descricao.errors?.minlength?.requiredLength }} caracteres."
+        ></app-message>      
       </div>
 
       <div class="ui-g-12 ui-md-3 ui-fluid">
