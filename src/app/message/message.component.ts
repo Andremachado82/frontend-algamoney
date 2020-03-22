@@ -4,8 +4,8 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-message',
   template: `
-    <div *ngIf="temErro()" class="ui-messages ui-messages-error"> 
-      {{ text }} 
+    <div *ngIf="temErro()" class="ui-messages ui-messages-error">
+      {{ text }}
     </div>
     `,
 
@@ -24,6 +24,6 @@ export class MessageComponent {
   @Input() text: string;
 
   temErro(): boolean {
-    return this.control.hasError(this.error) && this.control.dirty ;
+    return this.control.hasError(this.error) && this.control.touched;
   }
 }
