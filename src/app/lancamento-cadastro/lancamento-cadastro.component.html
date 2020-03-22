@@ -1,5 +1,5 @@
 <div class="container">
-  <form autocomplete="off">
+  <form #f="ngForm" autocomplete="off">
     <div class="ui-g">
       <div class="ui-g-12">
         <h1>Novo Lançamento</h1>
@@ -15,7 +15,16 @@
           dateFormat="dd/mm/yy"
           [readonlyInput]="false"
           [showIcon]="true"
+          name="vencimento"
+          ngModel
+          required
+          #vencimento="ngModel"
         ></p-calendar>
+        <app-message
+          [control]="vencimento"
+          error="required"
+          text="Informe uma data de vencimento"
+        ></app-message>
       </div>
 
       <div class="ui-g-6 ui-md-3 ui-fluid">
@@ -71,7 +80,11 @@
           }"
           name="valor"
           ngModel
+          required
+          #valor="ngModel"
         />
+        <app-message [control]="valor" error="required" text="Informe um valor">
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
@@ -79,8 +92,17 @@
         <p-dropdown
           [options]="categorias"
           placeholder="Selecione"
-          #categoria
+          #categoria="ngModel"
+          name="categoria"
+          ngModel
+          required
         ></p-dropdown>
+        <app-message
+          [control]="categoria"
+          error="required"
+          text="Selecione uma categoria "
+        >
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-md-6 ui-fluid">
@@ -89,8 +111,17 @@
           [options]="pessoas"
           [filter]="true"
           placeholder="Selecione"
-          #pessoa
+          #pessoa="ngModel"
+          name="pessoa"
+          ngModel
+          required
         ></p-dropdown>
+        <app-message
+          [control]="pessoa"
+          error="required"
+          text="Selecione uma pessoa "
+        >
+        </app-message>
       </div>
 
       <div class="ui-g-12 ui-fluid">
@@ -99,7 +130,12 @@
       </div>
 
       <div class="ui-g-12">
-        <button pButton type="submit" label="Salvar"></button>
+        <button
+          pButton
+          type="submit"
+          label="Salvar"
+          [disabled]="f.invalid"
+        ></button>
         <button
           pButton
           type="button"
